@@ -1,4 +1,5 @@
-require 'enumerable.rb'
+require_relative 'enumerable'
+
 class MyList 
   include Enumerable
   def initialize(list)
@@ -6,7 +7,11 @@ class MyList
   end
 end
 
-list = MyList.new([1,2,3,4])
-list.all?{|n| n ==2}
-list.filter{|n| n < 4 }
+list = MyList.new([1, 2, 3, 4])
+
+list.all? {|e| e < 5}
+list.all? {|e| e > 5}
+list.any? {|e| e == 2}
+list.any? {|e| e == 5}
+list.filter {|e| e.even?}
 
