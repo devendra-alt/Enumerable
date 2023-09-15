@@ -7,9 +7,8 @@ class MyList
   end
 
   def each
-    for i in 0..@list.length do
+    (0..@list.length).each do |i|
       yield(@list[i])
-      i+=1  
     end
   end
 end
